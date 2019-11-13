@@ -1,47 +1,39 @@
-// miniprogram/pages/movie/movie.js
+// miniprogram/pages/comment/comment.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    movieList: []
-  },
-
-  getMovieList: function() {
-    wx.showLoading({
-      title: '加载中',
-    })
-
-    wx.cloud.callFunction({
-      name: "movielist",
-      data: {
-        start: this.data.movieList.length,
-        count: 10
-      }
-    }).then(res => {
-      console.log(res);
-      this.setData({
-        movieList: this.data.movieList.concat(JSON.parse(res.result).subjects)
-      });
-      wx.hideLoading();
-    }).catch(err => {
-      console.err(err);
-      wx.hideLoading();
-    });
-  },
-
-  gotoComment: function(event) {
-    wx.navigateTo({
-      url: `../comment/comment?movieid=${event.target.dataset.movieid}`,
-    })
+    detail: {}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getMovieList()
+    this.setData({
+      movieId: options.movieid
+    });
+    wx.showLoading({
+      title: '加载中',
+    })
+    console.log(options);
+    wx.cloud.callFunction({
+      name: 'getDetail',
+      data: {
+        movieid: options.movieid
+      }
+    }).then(res => {
+      // console.log(res);
+      this.setData({
+        detail: JSON.parse(res.result)
+      });
+      wx.hideLoading();
+    }).catch(err => {
+      console.error(err);
+      wx.hideLoading();
+    });
   },
 
   /**
@@ -83,7 +75,7 @@ Page({
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    this.getMovieList()
+
   },
 
   /**

@@ -1,7 +1,8 @@
 {
   "pages": [
     "pages/movie/movie",
-    "pages/profile/profile"
+    "pages/profile/profile",
+    "pages/comment/comment"
   ],
   "window": {
     "backgroundColor": "#F6F6F6",
@@ -13,18 +14,20 @@
   "tabBar": {
     "color": "#000",
     "selectedColor": "#E54847",
-    "list": [{
-      "pagePath": "pages/movie/movie",
-      "text": "电影",
-      "iconPath": "./images/film.png",
-      "selectedIconPath": "./images/film-actived.png"
-    },
-    {
-      "pagePath": "pages/profile/profile",
-      "text": "电影",
-      "iconPath": "./images/profile.png",
-      "selectedIconPath": "./images/profile-actived.png"
-    }]
+    "list": [
+      {
+        "pagePath": "pages/movie/movie",
+        "text": "电影",
+        "iconPath": "./images/film.png",
+        "selectedIconPath": "./images/film-actived.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "电影",
+        "iconPath": "./images/profile.png",
+        "selectedIconPath": "./images/profile-actived.png"
+      }
+    ]
   },
   "sitemapLocation": "sitemap.json",
   "style": "v2"

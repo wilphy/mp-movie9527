@@ -1,6 +1,8 @@
 <!--miniprogram/pages/movie/movie.wxml-->
 <view class="movie" wx:for="{{movieList}}" wx:key="{{index}}">
+
   <image class="movie-img" src="{{item.images.small}}"></image>
+
   <view class="movie-info">
     <view class="movie-title">{{item.title}}</view>
     <view class="">观众评分：
@@ -10,5 +12,8 @@
       <text wx:for="{{item.casts}}" wx:key="{{index}}">{{item.name}} </text>
     </view>
     <view>年份：{{item.year}}</view>
+
+    <button size="mini" class="movie-comment" bindtap="gotoComment" data-movieid="{{item.id}}">评论</button>
+
   </view>
 </view>

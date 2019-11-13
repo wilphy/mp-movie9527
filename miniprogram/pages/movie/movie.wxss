@@ -5,6 +5,7 @@
   display: flex;
   padding: 10rpx;
   border-bottom: 1px solid #ccc;
+  position: relative;
 }
 
 .movie-img {
@@ -26,4 +27,11 @@
 
 .movie-score {
   color: #f06
+}
+
+.movie-comment {
+  color: #fff;
+  background: #83B8FF;
+  position: absolute;
+  bottom: 10rpx;
 }
