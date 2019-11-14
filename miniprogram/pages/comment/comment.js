@@ -5,7 +5,43 @@ Page({
    * 页面的初始数据
    */
   data: {
-    detail: {}
+    detail: {},
+    content: '',  //评价内容
+    score: 0,     //星级
+    commentImg: []       //上传的图片
+  },
+
+  submit: function() {
+    console.log(this.data.content);
+    console.log(this.data.score);
+  },
+
+  onContentChange: function(event) {
+    this.setData({
+      content: event.detail
+    })
+  },
+
+  onScoreChange: function(event) {
+    this.setData({
+      score: event.detail
+    })
+  },
+
+  imgUpload: function() {
+    wx.chooseImage({
+      count: 6,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success: (res) => {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths;
+        console.log(tempFilePaths);
+        this.setData({
+          commentImg: tempFilePaths  
+        })
+      }
+    })
   },
 
   /**

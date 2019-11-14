@@ -56,3 +56,14 @@
   color: #555;
   font-size: 24rpx;
 }
+
+.comment-img {
+  display: flex;
+}
+
+.comment-img-item {
+  flex: 1;
+  height: 200rpx;
+  border: 1px solid #ccc;
+  margin: 10rpx;
+}
