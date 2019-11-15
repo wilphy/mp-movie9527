@@ -23,7 +23,7 @@
       },
       {
         "pagePath": "pages/profile/profile",
-        "text": "电影",
+        "text": "我的",
         "iconPath": "./images/profile.png",
         "selectedIconPath": "./images/profile-actived.png"
       }

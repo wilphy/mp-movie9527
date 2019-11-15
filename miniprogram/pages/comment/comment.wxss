@@ -62,8 +62,12 @@
 }
 
 .comment-img-item {
-  flex: 1;
+  flex: 1 1 1;
   height: 200rpx;
   border: 1px solid #ccc;
-  margin: 10rpx;
+  margin-right: 10rpx;
+}
+
+.comment-img-item:first-child {
+  margin-left: 10rpx;
 }

@@ -16,21 +16,15 @@
 
   <!-- 评论 -->
   <van-cell-group>
-  <van-field
-    value="{{ content }}"
-    placeholder="写下你的评论"
-    border="{{ true }}"
-    bind:change="onContentChange"
-  />
-</van-cell-group>
-<view>
-  <van-rate value="{{ score }}" bind:change="onScoreChange" />
-  <van-button size="normal" type="warning" bindtap="imgUpload">上传图片</van-button>
-  <view class="comment-img">
-    <image class="comment-img-item" src="{{ item }}" wx:for="{{ commentImg }}" wx:key="index"></image>
+    <van-field value="{{ content }}" placeholder="写下你的评论" border="{{ true }}" bind:change="onContentChange" />
+  </van-cell-group>
+  <view>
+    <van-rate value="{{ score }}" bind:change="onScoreChange" />
+    <button plain="true" type="primary" bindtap="imgUpload">上传图片</button>
+    <view class="comment-img">
+      <image class="comment-img-item" src="{{ item }}" wx:for="{{ commentImg }}" wx:key="index"></image>
+    </view>
   </view>
-</view>
 
-<van-button class="submit-button" round type="danger" bindtap="submit" size="large">提交评价</van-button>
+  <button class="submit-button" plain="true" type="warn" bindtap="submit">提交评价</button>
 </view>
-
